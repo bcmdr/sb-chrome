@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="pop-up.css" />
+  </head>
+  <body>
+    <main class="pop-up">
+      <div class="idea">
+        <textarea name="idea-text" id="idea-text"></textarea>
+        <div style="display: flex; align-items: center">
+          <input type="checkbox" id="include-link" />
+          <label style="margin-left: 3px" for="include-link"
+            >Link to Current Page</label
+          >
+        </div>
+      </div>
+      <select
+        id="stormSelect"
+        name="stormSelect"
+        class="storm-option form-control"
+      ></select>
+      <button id="saveIdea" class="btn btn-primary">Save Idea</button>
+      <div>
+        <!-- <button id="clearIdea" class="btn btn-primary-hollow">Clear</button> -->
+        <button id="goToStorm" class="btn btn-primary-hollow">
+          Go to Storm
+        </button>
+      </div>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "Stormboard",
+  "description": "Create Storms and add ideas from your browser",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/stormboard-logo.png",
+      "32": "/images/stormboard-logo.png",
+      "48": "/images/stormboard-logo.png",
+      "128": "/images/stormboard-logo.png"
+    }
+  },
+  "icons": {
+    "16": "/images/stormboard-logo.png",
+    "32": "/images/stormboard-logo.png",
+    "48": "/images/stormboard-logo.png",
+    "128": "/images/stormboard-logo.png"
+  },
+  "options_page": "options.html"
+}

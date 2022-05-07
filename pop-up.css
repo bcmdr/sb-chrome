@@ -1,0 +1,91 @@
+.pop-up {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 180px;
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+  border: none;
+  background: rgb(246, 232, 122);
+  margin: 0.5rem 0;
+  max-width: 140px;
+  margin: 5px auto;
+  font-family: sans-serif;
+  padding: 1rem;
+  line-height: 1.25rem;
+}
+
+.idea {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid rgb(246, 232, 122);
+  background: rgb(246, 232, 122);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+option {
+  text-align: center;
+}
+
+.btn {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #3bafda;
+  border-color: #28a5d4;
+}
+
+textArea.saved {
+  color: #888;
+}
+
+.btn-saved {
+  background-color: rgb(63, 195, 128);
+}
+
+.btn-primary-hollow, .btn-primary-hollow:active, .btn-primary-hollow:focus, .btn-primary-hollow:visited {
+  color: #28a5d4;
+  background: #fff;
+  border-color: #ccc;
+  }
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  line-height: 1.42857143;
+  padding: 6px 12px;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
