@@ -1,6 +1,6 @@
 {
   "name": "Stormboard",
-  "description": "Create Storms and add ideas from your browser",
+  "description": "Add ideas to your Storms from your browser menu.",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
@@ -21,6 +21,5 @@
     "32": "/images/stormboard-logo.png",
     "48": "/images/stormboard-logo.png",
     "128": "/images/stormboard-logo.png"
-  },
-  "options_page": "options.html"
+  }
 }
