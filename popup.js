@@ -1,5 +1,3 @@
-const apiKey = '39a63810f70e8f1a0e7b5421f1370365998f6e9c'
-
 function getStorms() {
   async function getData(url = '') {
     const response = await fetch(url, {
