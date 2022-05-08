@@ -20,7 +20,11 @@ function getStorms() {
       option.innerText = storm.title;
       select.append(option);
     }
-  })
+  }).catch((error) => {
+    chrome.tabs.update({
+      url: "https://api.stormboard.com/docs"
+    });
+  });
 }
 
 function saveIdea(url) {
@@ -32,9 +36,9 @@ function saveIdea(url) {
         'Content-Type': 'application/json',
         'X-API-Key': apiKey
       },
-      body: JSON.stringify(data) // body data type must match "Content-Type" header
+      body: JSON.stringify(data)
     });
-    return response.json(); // parses JSON response into native JavaScript objects
+    return response.json();
   }
 
   let ideaText = document.getElementById("idea-text")?.value;
