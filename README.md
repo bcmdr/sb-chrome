@@ -14,7 +14,7 @@ Replace 1234abcd with your Stormboard API Key (so that your API Key is surrounde
 
 ## Usage
 
-If your Storm list does not load, navigate to [https://api.stormboard.com/docs](https://api.stormboard.com/docs) and click the extension's icon in your browser menu once or twice to reload the extension.
+If your Storm list does not load, navigate to [api.stormboard.com/docs](https://api.stormboard.com/docs) and click the extension's icon in your browser menu once or twice to reload the extension.
 
 ### Creating a Sticky Note
 
