@@ -24,25 +24,16 @@ async function postData(url = '', data = {}) {
 }
 
 async function getStorms() {
-  try {
-    let response = await getData('https://api.stormboard.com/storms')
-    let stormList = [...response.storms];
-    let select = document.getElementById('storm-select');
+  let response = await getData('https://api.stormboard.com/storms');
+  let stormList = [...response.storms];
+  let select = document.getElementById('storm-select');
 
-    // Build the Storm Select Drop-down
-    for (const storm of stormList) {
-      let option = document.createElement('option');
-      option.value = storm.id;
-      option.innerText = storm.title;
-      select.append(option);
-    }
-
-  } catch (error) {
-    console.error(error);
-    // Redirect to API Docs to work-around CORS. 
-    chrome.tabs.update({
-      url: "https://api.stormboard.com/docs"
-    });
+  // Build the Storm Select Drop-down
+  for (const storm of stormList) {
+    let option = document.createElement('option');
+    option.value = storm.id;
+    option.innerText = storm.title;
+    select.append(option);
   }
 }
 
