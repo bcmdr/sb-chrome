@@ -85,8 +85,8 @@ async function saveIdea(url) {
     let textArea = document.getElementById("idea-text");
     textArea.classList.add('saved');
 
-    // Add click listener to revert saved status. 
-    textArea.addEventListener('click', () => {
+    // Add foucs listener text area to revert saved status. 
+    textArea.addEventListener('focus', () => {
       textArea.value = '';
       textArea.classList.remove('saved');
       saveIdea.innerText = 'Save Idea';

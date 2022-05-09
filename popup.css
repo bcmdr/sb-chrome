@@ -62,7 +62,13 @@ textArea.saved {
 
 .btn-saved {
   background-color: rgb(63, 195, 128);
+  pointer-events: none;
 }
+
+.save-idea__wrapper {
+  cursor: not-allowed;
+}
+
 
 .btn-primary-hollow, .btn-primary-hollow:active, .btn-primary-hollow:focus, .btn-primary-hollow:visited {
   color: #28a5d4;
