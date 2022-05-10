@@ -4,7 +4,7 @@ Add ideas to your Storms from your browser menu.
 
 ## Installation
 
-Create a file called `config.js` in the same directory as `pop-up.js` with the following line:
+Create a file called `config.js` in the same directory as `popup.js` with the following line:
 
 ```
 const apiKey = '1234abcd';
