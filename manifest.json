@@ -3,7 +3,8 @@
   "description": "Add ideas to your Storms from your browser menu.",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://api.stormboard.com/*"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

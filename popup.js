@@ -39,10 +39,6 @@ async function getStorms() {
 
   } catch (error) {
     console.error(error);
-    // Redirect to API Docs to work-around CORS. 
-    chrome.tabs.update({
-      url: "https://api.stormboard.com/docs"
-    });
   }
 }
 
@@ -51,6 +47,7 @@ async function saveIdea(url) {
   let ideaText = textArea.value;
   let stormid = document.getElementById("storm-select").value;
   let includeLink = document.getElementById('include-link');
+  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   
   // If idea is empty, focus the text area and stop. 
   if (ideaText.trim() === '') {
@@ -60,7 +57,7 @@ async function saveIdea(url) {
   }
 
   // Append the current page's url to the idea if selected. 
-  ideaText = includeLink.checked ? ideaText + `\n\n${url}` : ideaText;
+  ideaText = includeLink.checked ? ideaText + `\n\n${tab.url}` : ideaText;
   
   // Create the idea. 
   let idea = {
@@ -84,6 +81,7 @@ async function saveIdea(url) {
     // Change the text area to show it saved. 
     let textArea = document.getElementById("idea-text");
     textArea.classList.add('saved');
+    textArea.blur();
 
     // Add foucs listener text area to revert saved status. 
     textArea.addEventListener('focus', () => {
@@ -105,10 +103,18 @@ async function saveIdea(url) {
   getStorms();
   textArea.focus();
 
+  textArea.addEventListener("keydown", (event) => {
+    if (event.key === 'Enter') {
+      if (!event.shiftKey) {
+        event.preventDefault();
+        saveIdea();
+      }
+    }
+  });
+
   // Save Idea Button
   saveIdeaBtn.addEventListener("click", async () => {
-    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    saveIdea(tab.url);
+    saveIdea();
   });
 
   // Go to Storm Button
