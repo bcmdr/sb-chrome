@@ -115,7 +115,7 @@ async function saveIdea(url) {
   // Go to Storm Button
   goToStormBtn.addEventListener('click', async () => {
     let stormid = document.getElementById("storm-select").value;
-    chrome.tabs.update({
+    chrome.tabs.create({
       url: "http://www.stormboard.com/storm/" + stormid
     });
   });
