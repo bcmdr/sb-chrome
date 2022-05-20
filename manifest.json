@@ -7,12 +7,16 @@
   "host_permissions": ["https://api.stormboard.com/*"],
   "action": {
     "default_popup": "popup.html",
+    "default_title": "Add Idea to Stormboard",
     "default_icon": {
       "16": "/images/stormboard-logo.png",
       "32": "/images/stormboard-logo.png",
       "48": "/images/stormboard-logo.png",
       "128": "/images/stormboard-logo.png"
     }
+  },
+  "background": {
+    "service_worker": "background.js"
   },
   "icons": {
     "16": "/images/stormboard-logo.png",

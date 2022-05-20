@@ -1,4 +1,4 @@
-async function getData(url = '') {
+async function getData(url = '', apiKey) {
   const response = await fetch(url, {
     method: 'GET',
     mode: 'cors',
@@ -10,7 +10,7 @@ async function getData(url = '') {
   return response.json();
 }
 
-async function postData(url = '', data = {}) {
+async function postData(url = '', data = {}, apiKey) {
   const response = await fetch(url, {
     method: 'POST',
     mode: 'cors',
@@ -23,8 +23,8 @@ async function postData(url = '', data = {}) {
   return response.json();
 }
 
-async function getStorms() {
-  let response = await getData('https://api.stormboard.com/storms');
+async function getStorms(apiKey) {
+  let response = await getData('https://api.stormboard.com/storms', apiKey);
   let stormList = [...response.storms];
   let select = document.getElementById('storm-select');
   
@@ -62,30 +62,34 @@ async function saveIdea(url) {
     y: 250,
   }
 
-  // Submit the idea.
-  let response = await postData('https://api.stormboard.com/ideas', idea);
+  // Load the API Key from Storage
+  chrome.storage.local.get(['apiKey'], async function(result) {
+    let apiKey = result.apiKey;
+    // Submit the idea.
+    let response = await postData('https://api.stormboard.com/ideas', idea, apiKey);
 
-  // Response was successful.
-  if (response.status === 200) {
+    // Response was successful.
+    if (response.status === 200) {
 
-    // Change the save button to show it saved. 
-    let saveIdea = document.getElementById('saveIdea');
-    saveIdea.classList.add('btn-saved');
-    saveIdea.innerText = 'Saved';
+      // Change the save button to show it saved. 
+      let saveIdea = document.getElementById('saveIdea');
+      saveIdea.classList.add('btn-saved');
+      saveIdea.innerText = 'Saved';
 
-    // Change the text area to show it saved. 
-    let textArea = document.getElementById("idea-text");
-    textArea.classList.add('saved');
-    textArea.blur();
+      // Change the text area to show it saved. 
+      let textArea = document.getElementById("idea-text");
+      textArea.classList.add('saved');
+      textArea.blur();
 
-    // Add foucs listener text area to revert saved status. 
-    textArea.addEventListener('focus', () => {
-      textArea.value = '';
-      textArea.classList.remove('saved');
-      saveIdea.innerText = 'Save Idea';
-      saveIdea.classList.remove('btn-saved');
-    });
-  }
+      // Add foucs listener text area to revert saved status. 
+      textArea.addEventListener('focus', () => {
+        textArea.value = '';
+        textArea.classList.remove('saved');
+        saveIdea.innerText = 'Save Idea';
+        saveIdea.classList.remove('btn-saved');
+      });
+    }
+  });
 }
 
 // Run main function when extension pop-up loads.
@@ -94,9 +98,15 @@ async function saveIdea(url) {
   let saveIdeaBtn = document.getElementById("saveIdea");
   let goToStormBtn = document.getElementById("goToStorm");
   
-  // Fetch Storms from Stormboard API and ready the text area. 
-  getStorms();
+  // Ready the text area. 
+
   textArea.focus();
+
+  // Fetch Storm List
+  chrome.storage.local.get(['apiKey'], function(result) {
+    getStorms(result.apiKey);
+  });
+
 
   textArea.addEventListener("keydown", (event) => {
     if (event.key === 'Enter') {
