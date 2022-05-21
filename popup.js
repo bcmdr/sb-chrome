@@ -99,15 +99,14 @@ async function saveIdea(url) {
   let goToStormBtn = document.getElementById("goToStorm");
   
   // Ready the text area. 
-
   textArea.focus();
 
   // Fetch Storm List
-  chrome.storage.local.get(['apiKey'], function(result) {
+  chrome.storage.sync.get(['apiKey'], function(result) {
     getStorms(result.apiKey);
   });
 
-
+  // Save Idea Button -> On 'Enter' key
   textArea.addEventListener("keydown", (event) => {
     if (event.key === 'Enter') {
       if (!event.shiftKey) {
@@ -117,7 +116,7 @@ async function saveIdea(url) {
     }
   });
 
-  // Save Idea Button
+  // Save Idea Button -> On Click
   saveIdeaBtn.addEventListener("click", async () => {
     saveIdea();
   });
@@ -126,7 +125,7 @@ async function saveIdea(url) {
   goToStormBtn.addEventListener('click', async () => {
     let stormid = document.getElementById("storm-select").value;
     chrome.tabs.create({
-      url: "http://www.stormboard.com/storm/" + stormid
+      url: "https://www.stormboard.com/storm/" + stormid
     });
   });
 })(); 

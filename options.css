@@ -1,0 +1,11 @@
+body > * {
+  margin-bottom: 1rem;
+}
+
+input {
+  margin-top: 0.5rem;
+}
+
+#api-key {
+  width: 25em;
+}

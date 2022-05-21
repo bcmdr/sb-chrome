@@ -18,6 +18,7 @@
   "background": {
     "service_worker": "background.js"
   },
+  "options_page": "options.html",
   "icons": {
     "16": "/images/stormboard-logo.png",
     "32": "/images/stormboard-logo.png",
