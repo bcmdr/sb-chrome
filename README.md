@@ -4,13 +4,8 @@ Add ideas to your Storms from your browser menu.
 
 ## Installation
 
-Create a file called `config.js` in the same directory as `popup.js` with the following line:
-
-```
-const apiKey = '1234abcd';
-```
-
-Replace 1234abcd with your Stormboard API Key (so that your API Key is surrounded by single quotes).
+- Afer adding the extension to chrome, right-click the extension icon and click *Options*. 
+- Add your Stormboard API Key (found in your My Account settings in Stormboard) to the text field in the settings page and click *Save*. 
 
 ## Usage
 
