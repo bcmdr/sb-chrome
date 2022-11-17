@@ -15,5 +15,5 @@ If your Storm list does not load, navigate to [api.stormboard.com/docs](https://
 
 1. Click and type in the yellow text area.
 2. Select the target Storm from the drop-down below the yellow text area.
-3. Click `Save Idea`.
+3. Click **Save Idea** or press *Enter*.
 4. Optionally, click `Go to Storm` to navigate to the Storm selected in the drop-down above.
