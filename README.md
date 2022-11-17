@@ -4,8 +4,8 @@ Add ideas to your Storms from your browser menu.
 
 ## Installation
 
-- Afer adding the extension to chrome, right-click the extension icon and click *Options*. 
-- Add your Stormboard API Key (found in your My Account settings in Stormboard) to the text field in the settings page and click *Save*. 
+- Afer adding the extension to chrome, right-click the extension icon and click **Options**. 
+- Add your Stormboard API Key (found in your My Account settings in Stormboard) to the text field in the settings page and click **Save**. 
 
 ## Usage
 
