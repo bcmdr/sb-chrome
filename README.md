@@ -19,5 +19,5 @@ Create Stormboard ideas from your browser menu.
 1. Click and type in the yellow text area.
 2. Select the target Storm from the drop-down below the yellow text area.
 3. Click **Save Idea** or press _Enter_.
-4. Optionally, click `Go to Storm` to navigate to the Storm selected in the drop-down above.
+4. Optionally, click **Go to Storm** to navigate to the Storm selected in the drop-down above.
 5. Click the yellow text area again to create another Sticky Note.
