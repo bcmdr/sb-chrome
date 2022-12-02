@@ -4,8 +4,12 @@ Create Stormboard ideas from your browser menu.
 
 ## Installation
 
-- Afer adding the extension to chrome, right-click the extension icon and click **Options**.
-- Add your Stormboard API Key (found in your My Account settings in Stormboard) to the text field in the settings page and click **Save**.
+1. Download this repository as a ZIP file (**Code** > **Download ZIP**).
+2. Double click the downloaded ZIP file to unpack it as a folder.
+3. In Chrome, go to **Extensions** > **Manage Extensions** and click **Load Unpacked**.
+4. Select the foler created in step 2.
+5. Afer adding the extension to chrome, pin the extension and click its icon.
+6. Add your Stormboard API Key (found in your My Account settings in Stormboard) to the text field in the settings page and click **Save**.
 
 ### Creating a Sticky Note
 
