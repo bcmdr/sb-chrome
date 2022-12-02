@@ -10,6 +10,7 @@ Create Stormboard ideas from your browser menu.
 4. Select the foler created in step 2.
 5. Afer adding the extension to chrome, pin the extension and click its icon.
 6. Add your Stormboard API Key (found in your My Account settings in Stormboard) to the text field in the settings page and click **Save**.
+7. Click the extension icon again to begin creating a Sticky Note.
 
 ### Creating a Sticky Note
 
