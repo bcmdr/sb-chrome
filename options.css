@@ -1,0 +1,57 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:root {
+  background: rgb(11, 50, 90);
+}
+
+header > h1 {
+  margin: 3rem 1rem;
+  text-align: center;
+  color: white;
+  font-family: proxima-nova,"Tikal Sans",Helvetica,Arial,sans-serif;
+}
+
+section {
+  padding: 1rem;
+  max-width: 540px;
+  margin: auto;
+  background: white;
+  border-radius: 5px;
+  color: #6d6e70;
+  margin-bottom: 3rem;
+}
+
+.option label {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.option input {
+  margin: 1rem 0;
+  width: 100%;
+  height: 2rem;
+  padding: 0.5rem;
+}
+
+main button {
+  background-color: #3bafda;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+main img {
+  width: 100%;
+}
+
+main h3 {
+  margin-top: 0.5rem;
+  font-weight: normal;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
