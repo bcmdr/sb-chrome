@@ -25,11 +25,18 @@ async function postData(url = '', data = {}, apiKey) {
 
 async function getStorms(apiKey) {
   let response = await getData('https://api.stormboard.com/storms', apiKey);
+
+  if (response.error) {
+    console.log(response.error);
+    chrome.runtime.openOptionsPage();
+    return;
+  }
+
   let stormList = [...response.storms];
   let select = document.getElementById('storm-select');
   
   // Build the Storm Select Drop-down
-  for (const storm of stormList) {
+  for (let storm of stormList) {
     let option = document.createElement('option');
     option.value = storm.id;
     option.innerText = storm.title;
@@ -63,7 +70,7 @@ async function saveIdea(url) {
   }
 
   // Load the API Key from Storage
-  chrome.storage.local.get(['apiKey'], async function(result) {
+  chrome.storage.sync.get(['apiKey'], async function(result) {
     let apiKey = result.apiKey;
     // Submit the idea.
     let response = await postData('https://api.stormboard.com/ideas', idea, apiKey);
@@ -81,7 +88,7 @@ async function saveIdea(url) {
       textArea.classList.add('saved');
       textArea.blur();
 
-      // Add foucs listener text area to revert saved status. 
+      // Add foucs listener to text area to revert saved status. 
       textArea.addEventListener('focus', () => {
         textArea.value = '';
         textArea.classList.remove('saved');
@@ -103,6 +110,10 @@ async function saveIdea(url) {
 
   // Fetch Storm List
   chrome.storage.sync.get(['apiKey'], function(result) {
+    if(!result.apiKey) {
+      chrome.runtime.openOptionsPage();
+      return;
+    }
     getStorms(result.apiKey);
   });
 
