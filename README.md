@@ -2,6 +2,8 @@
 
 Create Stormboard ideas from your browser menu.
 
+<img width="1017" alt="Stormboard Extension Screenshot" src="https://user-images.githubusercontent.com/2923839/205201479-958de239-ebf8-4bde-a975-08d414801219.png">
+
 ## Installation
 
 1. Download this repository as a ZIP file (**Code** > **Download ZIP**).
